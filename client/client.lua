@@ -232,9 +232,7 @@ function PlayAnimOnPlayer(object,vertx,verty,vertz,dir, isBed, ped, objectcoords
 	end
 end
 
-
-	Citizen.CreateThread(function()
-		exports['qtarget']:AddTargetModel(beds, {
+exports['qtarget']:AddTargetModel(beds, {
 			options = {
 				{
 					event = "bed:menu",
@@ -245,10 +243,11 @@ end
 			job = {"all"},
 			distance = 5
 		})
-	
 
+	
+if Config.Context = 'nh-context' then
 	RegisterNetEvent("bed:menu", function()
-    TriggerEvent("nh-context:createMenu", {
+	TriggerEvent("nh-context:createMenu", {
 			
 			{
 				header = "Sit on the bed",
@@ -279,9 +278,38 @@ end
 			
 		})
 	end)
+else if Config.Context = 'ox_lib' then
+	lib.registerContext({
+		id = 'bedMenu',
+		title = 'Bed options',
+		options = {
+			{
+				title = 'Sit on the Bed',
+				event = 'bed:sit'
+			},
+			{
+				title = 'Lie down on your back',
+				event = 'bed:layBack'
+			},
+			{
+				title = 'Lie on your stomach',
+				event = 'bed:layStomach'
+			},
+			{
+				title = 'Get Up',
+				event = 'bed:up'
+			},
+
+		}
+	})	
+
+	RegisterNetEvent("bed:menu", function()
+		lib.showContext('bedMenu')
+	end)
+
+end
 	
 	
-end)
 
 
 
