@@ -1,8 +1,8 @@
-# ChairBedSystem using qtarget and nh Context
+# ChairBedSystem using qtarget and nh Context or ox_lib
 
-# Future plans: Add a option for ox lib
+# Future plans: Add a option for ox lib -Formulation
 
-# Dependencies: Nh-Context Qtarget
+# Dependencies: Nh-Context or ox_lib Qtarget
 
 ## Installation
 drag and drop, make sure you have the dependencies
@@ -10,6 +10,7 @@ drag and drop, make sure you have the dependencies
 ## Discord for support - https://discord.gg/BHHAs4GkeZ
 
 ## I do not take any credit for the original creation of the script, only the qtarget and nh context was made by me.
+ox_lib addition by Formulation
 
 ## All Credits to original Creators
 
